@@ -73,11 +73,11 @@ export default function DecimalFraction() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6 dark:text-white">Decimal ↔ Fraction Converter</h1>
+      <h1 className="text-2xl font-bold mb-6">Decimal ↔ Fraction Converter</h1>
       
       <div className="space-y-6">
         <div>
-          <label htmlFor="input" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="input" className="block text-sm font-medium text-gray-700">
             Enter a decimal number or fraction
           </label>
           <div className="flex gap-2">
@@ -87,12 +87,12 @@ export default function DecimalFraction() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
-              className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+              className="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
               placeholder="e.g., 0.75 or 3/4"
             />
             <button
               onClick={handleConvert}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors duration-150"
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-150"
             >
               Convert
             </button>
@@ -100,7 +100,7 @@ export default function DecimalFraction() {
         </div>
 
         {error && (
-          <div className="text-red-600 dark:text-red-400 text-sm">
+          <div className="text-red-600 text-sm">
             {error}
           </div>
         )}
@@ -108,18 +108,18 @@ export default function DecimalFraction() {
         {result && (
           <div>
             <div className="flex items-center justify-between mb-2">
-              <label htmlFor="output" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label htmlFor="output" className="block text-sm font-medium text-gray-700">
                 Result
               </label>
               <CopyButton text={result} />
             </div>
-            <div className="px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md dark:text-white">
+            <div className="px-3 py-2 bg-gray-50 border-gray-300 rounded-md">
               {result}
             </div>
           </div>
         )}
 
-        <div className="text-sm text-gray-500 dark:text-gray-400">
+        <div className="text-sm text-gray-500">
           <p>Enter either a decimal number (e.g., 0.75) or a fraction (e.g., 3/4).</p>
           <p>The converter will automatically detect the format and convert to the other form.</p>
         </div>
